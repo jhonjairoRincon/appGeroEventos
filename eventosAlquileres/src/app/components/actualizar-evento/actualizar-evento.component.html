@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span>Editar Producto</span>
+                    <form class="mt-3" (ngSubmit)="actualizarEvento()">
+                        <div class="mb-3">
+                            <input type="date" [(ngModel)]="eventos.fecha" name="fecha" class="form-control text-center">
+                            <!-- <div class="text-danger" 
+                            *ngIf="eventoForm.get('fecha')?.hasError('required') ">
+                            <span>La fecha es requerida</span> 
+                        </div> -->
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" [(ngModel)]="eventos.evento" name="evento"
+                                class="form-control text-center">
+                            <!-- <div class="text-danger" 
+                            *ngIf="eventoForm.get('evento')?.hasError('required') ">
+                            <span>El tipo de evento es requerido</span> </div>-->
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" [(ngModel)]="eventos.cliente" name="cliente"
+                                class="form-control text-center">
+                            <!-- <div class="text-danger" 
+                            *ngIf="eventoForm.get('clientes')?.hasError('required') ">
+                            <span>Los clientes son requeridos</span> 
+                        </div> -->
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-success ">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

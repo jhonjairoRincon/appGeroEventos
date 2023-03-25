@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+             <div class="card-body text-center">
+                <span>Crear Producto</span>
+                <form  class="mt-3" [formGroup]="eventoForm" (ngSubmit)="agregarEvento()">
+                    <div class="mb-3">
+                        <input type="date" formControlName="fecha" class="form-control" placeholder="Fecha">
+                        <div class="text-danger" 
+                            *ngIf="eventoForm.get('fecha')?.hasError('required') && eventoForm.get('fecha')?.touched">
+                            <span>La fecha es requerida</span> 
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" formControlName="evento" class="form-control text-center" placeholder="Evento">
+                        <div class="text-danger" 
+                            *ngIf="eventoForm.get('evento')?.hasError('required') && eventoForm.get('evento')?.touched">
+                            <span>El tipo de evento es requerido</span> </div>
+                        </div>
+                    <div class="mb-3">
+                        <input type="text" formControlName="clientes" class="form-control text-center" placeholder="Clientes">
+                        <div class="text-danger" 
+                            *ngIf="eventoForm.get('clientes')?.hasError('required') && eventoForm.get('clientes')?.touched">
+                            <span>Los clientes son requeridos</span> 
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit"  [disabled]="eventoForm.invalid" class="btn btn-success ">Guardar</button>
+                    </div>
+                </form>
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
