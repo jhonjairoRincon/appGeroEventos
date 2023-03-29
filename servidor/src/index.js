@@ -1,6 +1,8 @@
+require('dotenv').config()
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors')
+
 
 const app = express();// se inicia express
 
@@ -19,7 +21,7 @@ app.use(express.json())// se utiliza para que e pueda comunicar fronten con back
 //eventos
 app.use('/api/eventos',require('./routes/eventos.Routes'));
 //admin
-app.use('/',require('./routes/adminRoutes'));
+app.use('/',require('./routes/userRoutes'));
 //starting the server
 
 app.listen(app.get('port'),()=>{
