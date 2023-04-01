@@ -19,10 +19,13 @@ app.use(express.json())// se utiliza para que e pueda comunicar fronten con back
 
 //routes 
 //eventos
-app.use('/api/eventos',require('./routes/eventos.Routes'));
+app.use('/api/eventos',require('./routes/eventos'));
 //admin
-app.use('/',require('./routes/userRoutes'));
+app.use('/',require('./routes/user'));
+
+app.use('/',require('./routes/auth'));
 //starting the server
+
 
 app.listen(app.get('port'),()=>{
     console.log(`server en port ${app.get('port')}`)

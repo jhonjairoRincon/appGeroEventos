@@ -1,3 +1,4 @@
+const { matchedData } = require('express-validator');
 const evento = require('../models/eventos');
 const eventoController = {};
 
@@ -23,6 +24,7 @@ eventoController.getEvento = async (req, res) => {
 
 eventoController.postEvento = async (req, res) => {
     try {
+        req = matchedData(req)//devuelve la data con la informacion ajustada al model 
         const newEvento = new evento(req.body)
         await newEvento.save()
         res.send({ message: 'curso creado' })
